@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpdaData</title>
+    <style>
+        div{
+            height:550px; 
+            width:500px; 
+            background-color:aqua;
+            margin-left:500px; 
+            margin-top:80px;
+            box-shadow: 0px 0px 20px gray;
+        }
+        input{
+            height:30px;
+            width:450px;
+            margin-left:30px; }
+        label{
+            margin-left: 30px;
+            font-size: medium;
+            color:red;
+        } 
+        
+        .des{
+            margin-left:30px;
+            width:450px;
+            height:100px; 
+        }
+        .b1{
+            color:white; 
+            width:400px;
+            height:30px;
+            background-color:blue;
+            margin-left:30px;
+            border:none;
+        }
+        .b2{
+            color:white; 
+            width:400px;
+            height:30px;
+            background-color:red;
+            border:none;
+            margin-left:30px;
+        }
+        h1{
+            color:red; 
+            margin-left:120px;
+        }
+        a{
+            margin-left:30px;
+            text-decoration: none;
+            display: inline-block;
+            width:400px;
+            height:30px; 
+            background-color: green;
+            font-size: medium;
+            color:white;
+            text-align: center;
+
+            }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <form method="POST" action="{%url 'updateinf' info2.id%}">
+            {%csrf_token%}
+            <h1><u> Update My To-Do List:</u></h1>
+            <br><label>Title</label><br><input type="text" name="title" value="{{info2.Title}}"><br>
+            <br><label>Description</label><br><input type="text" name="description" value="{{info2.Description}}" class="des"><br> 
+            <br><label>Date</label><br><input type="text"  placeholder="Enter date in YYYY-MM-DD"name="date" value="{{info2.Date}}"><br>
+            <br><br>
+            <button type="submit" class="b1">Update</button><br> <br>
+            <button type="reset" class="b2">Cancel</button><br><br>
+            <a href="{%url 'main'%}">Go to main page</a>
+        </form>
+    </div>
+</body>
+</html>

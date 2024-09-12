@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Information</title>
+    <style>
+        div{
+            height:300px;
+            width:600px;
+            border:2px solid black;
+            margin-left:500px;
+            margin-top:70px;
+            background-color: blanchedalmond;
+
+        }
+        h1{
+            color:red;
+            margin-left:30px;
+        }
+        h3{
+            color:blue;
+            margin-left:30px;
+        }
+        h2{
+            color:brown;
+            margin-left:30px;
+        }
+        #one{
+            color:orange;
+            margin-left:120px;
+            
+        }
+        a{
+            margin-left:30px; 
+            display: inline-block;
+            font-size: larger;
+            width:500px;
+            height:30px; 
+            background-color: red;
+            color:white; 
+            text-decoration: none;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="one"> Complete Information</h1>
+        {%for i in info%}
+        <h1>Title:{{i.Title}}</h1>
+        <h3>Description:{{i.Description}}</h3>
+        <h2>Date:{{i.Date}}</h2>
+        {%endfor%}
+        <br> 
+        <a href="{%url 'main' %}">Go to main Page</a><br><br>
+        
+        
+
+    </div>
+</body>
+</html>

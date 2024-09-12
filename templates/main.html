@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My_TO_Do_List</title>
+    <style>
+        .op{
+            margin-left:350px;
+         
+            margin-top:-20px;
+            width:120px;
+        }
+        .contain{
+            height:1200px; 
+            width:600px; 
+            border:2px solid gray;
+            box-shadow: 0px 0px 10px gray;
+            margin-left:500px;
+            margin-top: 40px;
+    
+        }
+        .Add{
+            position: relative;
+            display: inline-flex;
+            color:white;
+            height:20px;
+            width:100px; 
+            background-color: blue;
+            margin-left:80%;
+            font-size: larger;
+            text-decoration: none;
+            margin-top:5px;
+
+        }
+        h1{
+            color:blue;
+            margin-left:200px;
+        }
+        .title{
+            display: inline-flex;
+            text-decoration: none;
+            font-size:larger;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color:blueviolet;
+        }
+        li{
+            color:blueviolet;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+        }
+     
+        .del{
+            display: inline-flex;
+            color:white;
+            background-color:green;
+            height:20px; 
+            width:50px; 
+            text-decoration: none;
+            
+        }
+        .update{
+            display: inline-flex;
+        
+            color:white;
+            background-color:red;
+            height:20px; 
+            width:50px; 
+            text-decoration: none;
+
+
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <h1><u>My To-Do List</u></h1>
+        <a href="{%url 'data'%}" class="Add">Add Task</a>
+        <br><br> <br>
+        <a href="{%url 'main'%}" class="Add">Refresh</a>
+        <br>
+        <br>
+        <ol type="1">
+            {%for i in title%}
+            <li> &nbsp;<a href="{%url 'information' i.id%}"class="title">{{i.Title}}</a> &nbsp; &nbsp; <div class="op"><a href="{%url 'update' i.id%}" class="update">Update</a> &nbsp;<a href="{%url 'delete' i.id%}" class="del">Delete</a></div></li>
+            <br>
+           {%endfor%}
+        </ol>
+        
+    </div>
+</body>
+</html>
